@@ -22,10 +22,15 @@ services:
   
   db:
     image: mysql:latest
+    restart: always
+    tty: true
     networks:
       - appnet
     environment:
-      - MYSQL_ROOT_PASSWORD=pass
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=appdb
+    volumes:
+      - ./mysql:/var/lib/mysql
 
 networks:
   appnet:
