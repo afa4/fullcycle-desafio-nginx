@@ -2,6 +2,8 @@
 
 Este repositório contém uma configuração Docker Compose para orquestrar uma aplicação multi-contêiner Docker composta por um proxy reverso NGINX, uma aplicação web e um banco de dados MySQL. O arquivo docker-compose.yml define os serviços e como eles interagem dentro de uma rede personalizada.
 
+**As chamadas http para aplicação, com excessão da rota '/favicon.ico' irão resultar na inserção de um nome randomico numa tabela em um banco de dados mysql. A resposta para as chamadas será a lista de nomes até então cadastrados.**
+
 Serviços
 
 1. App
